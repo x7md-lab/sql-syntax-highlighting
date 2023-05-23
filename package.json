@@ -1,0 +1,19 @@
+{
+  "name": "vite-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.3.2"
+  },
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.7.1",
+    "@codemirror/lang-sql": "^6.5.0",
+    "codemirror": "^6.0.1"
+  }
+}
