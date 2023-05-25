@@ -8,7 +8,7 @@ import { keymap } from '@codemirror/view';
 
 const languageConf = new Compartment();
 
-new EditorView({
+const codemirrorView = new EditorView({
   doc: 'select ',
   extensions: [
     minimalSetup,
@@ -19,10 +19,31 @@ new EditorView({
   parent: document.querySelector('#code-text'),
 });
 
-const worker = new Worker(new URL('./worker.sql-wasm.js', import.meta.url));
+
+
+const worker = new Worker(new URL('worker.sql-wasm.js', import.meta.url));
+
+const runButton = document.getElementById('run');
+const codeOutput = document.getElementById('output');
+
+worker.postMessage({
+  id:1,
+  action:"open",
+});
+
 worker.onmessage = () => {
   console.log('Database opened');
+  runButton.disabled = false;
   worker.onmessage = (event) => {
-    console.log(event.data); // The result of the query
+    codeOutput.innerHTML = JSON.stringify(event.data); // The result of the query
   };
+  runButton.addEventListener("click", ()=> {
+    worker.postMessage({
+      id: 2,
+      action: "exec",
+      sql: codemirrorView.state.doc.toString(),
+    });
+  })
 };
+
+

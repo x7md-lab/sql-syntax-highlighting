@@ -8,7 +8,18 @@
   </head>
   <body>
     <div id="app">
-      <div id="code-text"></div>
+      <div id="code-editor">
+        <div id="action-btns" style="display: flex; padding: 0.50rem;">
+          <button id="run" disabled>
+            Run
+          </button>
+        </div>
+        <div id="code-text"></div>
+        <div id="sql-output" style="display: flex; padding: 0.50rem;">
+          <pre id="output" style="white-space: pre-wrap;">
+          </pre>
+        </div>
+      </div>
     </div>
     <script type="module" src="/main.js"></script>
   </body>

@@ -1,11 +1,11 @@
 {
-  "name": "vite-starter",
+  "name": "sql-syntax-highlighting",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite --host",
+    "build": "vite build --base /sql-syntax-highlighting/",
     "preview": "vite preview"
   },
   "devDependencies": {
