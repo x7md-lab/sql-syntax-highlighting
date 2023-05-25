@@ -18,3 +18,11 @@ new EditorView({
   ],
   parent: document.querySelector('#code-text'),
 });
+
+const worker = new Worker(new URL('./worker.sql-wasm.js', import.meta.url));
+worker.onmessage = () => {
+  console.log('Database opened');
+  worker.onmessage = (event) => {
+    console.log(event.data); // The result of the query
+  };
+};
