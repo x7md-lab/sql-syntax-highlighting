@@ -21,7 +21,7 @@ const codemirrorView = new EditorView({
 
 
 
-const worker = new Worker(new URL('worker.sql-wasm.js', import.meta.url));
+const worker = new Worker('worker.sql-wasm.js');
 
 const runButton = document.getElementById('run');
 const codeOutput = document.getElementById('output');
