@@ -2,15 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/sql-syntax-highlighting/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/sql-syntax-highlighting/assets/index-1b83ae0e.js"></script>
+    <script type="module" crossorigin src="/sql-syntax-highlighting/assets/index-010818ae.js"></script>
     <link rel="stylesheet" href="/sql-syntax-highlighting/assets/index-980ccefc.css">
   </head>
   <body>
     <div id="app">
-      <div id="code-text"></div>
+      <div id="code-editor">
+        <div id="action-btns" style="display: flex; padding: 0.50rem;">
+          <button id="run" disabled>
+            Run
+          </button>
+        </div>
+        <div id="code-text"></div>
+        <div id="sql-output" style="display: flex; padding: 0.50rem;">
+          <pre id="output" style="white-space: pre-wrap;">
+          </pre>
+        </div>
+      </div>
     </div>
     
   </body>
